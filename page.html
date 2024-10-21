@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="page.css">
+</head>
+<body>
+   <form id="siginform">
+      <div class="container">
+         <div class="sign">SIGN IN</div>
+         <div class="uname"><input type="text" id="NAME" placeholder="USERNAME" ></div>
+         <div class="pass"><input type="password"  id="PASSWORD" placeholder="PASSWORD"> </div>
+            <input type="submit" value="SIGN IN">
+            <div class="par">DON'T HAVE AN ACCOUNT ?</div>
+         <a href="http://127.0.0.1:5500/pages/page3.html">CREATE AN ACCOUNT HERE</a>
+      </div>
+   </form>
+</body>
+<script>
+     var form = document.getElementById('siginform')
+
+form.addEventListener('submit',function(event){
+   event.preventDefault();
+   
+   var uname=document.getElementById('NAME').value;
+   console.log(uname);
+ 
+   var upass=document.getElementById('PASSWORD').value;
+   console.log(upass);
+
+   var USERNAME=localStorage.getItem('namestr');
+   var PASSWORD=localStorage.getItem('passstr');
+   if( uname === USERNAME && upass===PASSWORD )
+    alert("SUCCESSFUL !");
+   else if( uname !==USERNAME && upass===PASSWORD)
+     alert('YOU ENTERED WRONG USERNAME');
+   else if( uname === USERNAME && upass !== PASSWORD)
+   alert('YOU ENTERED WRONG PASSWORD ');
+   else{
+      alert('YOU ENTERED WRONG USERNAME AND PASSWORD');
+   }
+
+})
+</script>
+</html>

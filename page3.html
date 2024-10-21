@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="page3.css">
+</head>
+<body>
+    <form id ="form">
+    <div class="git">CREATE YOUR USERNAME AND PASSWORD </div>
+    <div class="hub">ENTER YOUR USERNAME</div>
+    <input type="text" id="name"placeholder=" ENTER USERNAME" required>
+    <div class="fer">ENTER YOUR PASSWORD</div>
+    <input type="text" id="password" placeholder=" ENTER PASSWORD" required>
+    <div class="fer">CONFIRM YOUR PASSWORD</div>
+    <input type="password" placeholder=" CONFIRM PASSWORD" required>
+    <br>
+   <input type="button" value="CREATE ACCOUNT" onclick="alert('YOUR ACCOUNT HAS BEEN CREATED SUCCESSFULLY !')"> 
+   <br>
+   <input type="submit" value="SIGN IN">
+    </form>
+</body>
+ <script>
+
+    var form=document.getElementById('form')
+     
+     form.addEventListener('submit',function(event){
+        event.preventDefault()
+       
+        var username=document.getElementById('name').value;
+        console.log(username);
+       
+        var password=document.getElementById('password').value;
+        console.log(password);
+
+        localStorage.setItem('namestr',username);
+        localStorage.setItem('passstr',password);
+        
+        window.location.href ="page.html";
+       
+    })
+
+ </script>
+</html>
